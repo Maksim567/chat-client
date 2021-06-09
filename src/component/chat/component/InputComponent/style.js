@@ -8,8 +8,14 @@ const useStyles = makeStyles({
     },
     InputBlock: {
         border: '1px solid #dee6ed',
-        width: '90%',
+        width: '100%',
+        fontSize: 'small',
+        padding: '5px 10px',
+
     },
+    InputButton: {
+        marginLeft: '2rem',
+    }
 });
 
 export { useStyles };

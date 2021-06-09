@@ -1,4 +1,4 @@
-import { makeStyles } from '@material-ui/core/styles';
+import {makeStyles} from '@material-ui/core/styles';
 
 const useStyles = makeStyles({
     root: {
@@ -21,9 +21,8 @@ const useStyles = makeStyles({
     },
     ContactOnline: {
         display: 'block',
-        verticalAlign: 'top',
         fontSize: '.725rem',
     }
 });
 
-export { useStyles };
+export {useStyles};
