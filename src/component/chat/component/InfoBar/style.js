@@ -13,11 +13,13 @@ const useStyles = makeStyles({
     ContactName: {
         display: 'block',
         fontSize: "medium",
+        fontFamily: 'sans-serif'
     },
     ContactTyping: {
         display: 'block',
         color: 'red',
         fontSize: 'small',
+        fontFamily: 'sans-serif'
     }
 
 });

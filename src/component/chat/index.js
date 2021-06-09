@@ -5,8 +5,7 @@ import UsersContainer from "./component/UsersContainer/UsersContainer";
 import InfoBar from "./component/InfoBar/InfoBar";
 import Message from "./component/Message/Message";
 import InputComponent from "./component/InputComponent/InputComponent";
-
-
+import List from "./component/test/list";
 
 const ChatComponent = () => {
 
@@ -22,6 +21,7 @@ const ChatComponent = () => {
                             <InfoBar/>
                             <Message/>
                             <InputComponent/>
+                            <List/>
                     </Grid>
                 </Grid>
             </Container>

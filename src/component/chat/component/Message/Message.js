@@ -1,9 +1,6 @@
 import Grid from "@material-ui/core/Grid";
-import Moment from "react-moment";
 import {useStyles} from "../Message/style";
 import {Avatar} from "@material-ui/core";
-import {useState} from "react";
-
 
 const Message = () => {
 
@@ -11,15 +8,17 @@ const Message = () => {
 
     return (
         <>
-            <Grid container>
+            <Grid container className={classes.root}>
                 <Grid container>
                     <Grid className={classes.MessageBlock}>
                         <span className={classes.MessageTitle}>You</span>
-                        <div className={classes.MessageText}>Lorem ipsum dolor sit amet, vis erat denique in, dicunt prodesset te vix.</div>
+                        <div className={classes.MessageText}>Lorem ipsum dolor sit amet, vis erat denique in, dicunt
+                            prodesset te vix.
+                        </div>
                     </Grid>
-                    <Grid xs={2}>
+                    <Grid className={classes.MessageImg}>
                         <Avatar alt="Remy Sharp" src="../images/avatar.jpeg"/>
-                        <Moment/>
+                        <span className={classes.MessageTime}>2:37 am</span>
                     </Grid>
                 </Grid>
                 <Grid container>
@@ -27,9 +26,9 @@ const Message = () => {
                         <span className={classes.MessageTitle}>Contact</span>
                         <div className={classes.MessageText}>Lorem ipsum dolor sit amet, vis erat deniqu</div>
                     </Grid>
-                    <Grid xs={2}>
+                    <Grid className={classes.MessageImg}>
                         <Avatar alt="Remy Sharp" src="../images/avatar.jpeg"/>
-                        <Moment/>
+                        <span className={classes.MessageTime}>2:37 am</span>
                     </Grid>
                 </Grid>
             </Grid>
