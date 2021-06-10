@@ -13,28 +13,25 @@ const InfoBar = () => {
     return (
         <>
             <Grid container className={classes.root}>
-                <Grid container item xs={9}>
-                    <Grid container>
-                        <Avatar alt="Remy Sharp" src="../images/avatar.jpeg"/>
-                        <div className={classes.ContactBlock}>
-                        <span className={classes.ContactName}>Ashley Briggs
-                        </span>
-                            <small className={classes.ContactTyping}>Typing...</small>
-                        </div>
-                    </Grid>
+                <Grid container xs={6} xl={9}>
+                    <Avatar alt="Remy Sharp" src="../images/avatar.jpeg"/>
+                    <div className={classes.ContactBlock}>
+                        <span>Ashley Briggs</span>
+                        <small>Typing...</small>
+                    </div>
                 </Grid>
-                <Grid item container spacing={1} xs={3}>
-                    <Grid item>
+                <Grid container spacing={1} xs={6} xl={3} className={classes.ContactButton}>
+                    <Grid item xs={4}>
                         <Button variant="contained" color="primary">
                             <PhoneIcon/>
                         </Button>
                     </Grid>
-                    <Grid item>
+                    <Grid item xs={4}>
                         <Button variant="contained" color="secondary">
                             <VideocamIcon/>
                         </Button>
                     </Grid>
-                    <Grid item>
+                    <Grid item xs={4}>
                         <Button variant="contained">
                             <MoreHorizIcon/>
                         </Button>
