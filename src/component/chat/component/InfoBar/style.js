@@ -9,17 +9,20 @@ const useStyles = makeStyles({
         display: "block",
         marginLeft: '0.7rem',
         verticalAlign: 'top',
+        '& span': {
+            display: 'block',
+            fontSize: "medium",
+            fontFamily: 'sans-serif',
+        },
+        '& small': {
+            display: 'block',
+            color: 'red',
+            fontSize: 'small',
+            fontFamily: 'sans-serif',
+        }
     },
-    ContactName: {
-        display: 'block',
-        fontSize: "medium",
-        fontFamily: 'sans-serif'
-    },
-    ContactTyping: {
-        display: 'block',
-        color: 'red',
-        fontSize: 'small',
-        fontFamily: 'sans-serif'
+    ContactButton: {
+        direction: 'row',
     }
 
 });

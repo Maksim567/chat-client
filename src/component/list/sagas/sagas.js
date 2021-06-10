@@ -1,7 +1,7 @@
 import { put, call, takeLatest } from "redux-saga/effects";
 
 const getUsers = () => {
-    return fetch("https://jsonplaceholder.typicode.com/users")
+    return fetch("https://jsonplaceholder.typicode.com/todos")
         .then((response) => ({ response }))
         .catch((error) => ({ error }));
 };

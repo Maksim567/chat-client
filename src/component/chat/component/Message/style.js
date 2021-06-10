@@ -10,27 +10,26 @@ const useStyles = makeStyles({
         borderRadius: '3px',
         padding: '1rem',
         marginBottom: '1rem',
-    },
-    MessageTitle: {
-        fontWeight: 'bold',
-        fontSize: 'medium',
-        fontFamily: 'sans-serif',
-        color: '#6c757d',
-    },
-    MessageText: {
-        fontSize: 'small',
-        fontFamily: 'sans-serif',
-        color: '#6c757d',
+        '& span': {
+            fontWeight: 'bold',
+            fontSize: 'medium',
+            fontFamily: 'sans-serif',
+            color: '#6c757d',
+        },
+        '& div': {
+            fontSize: 'small',
+            fontFamily: 'sans-serif',
+            color: '#6c757d',
+        }
     },
     MessageImg: {
         marginLeft: '0.7rem',
+        '& span': {
+            fontSize: 'x-small',
+            fontFamily: 'sans-serif',
+            color: '#6c757d',
+        }
     },
-    MessageTime: {
-        fontSize: 'x-small',
-        fontFamily: 'sans-serif',
-        color: '#6c757d',
-    }
-
 });
 
 export {useStyles};

@@ -12,8 +12,6 @@ const InputComponent = () => {
             <Grid container className={classes.root}>
                 <Grid xs={10}>
                     <Input className={classes.InputBlock} placeholder="Type your message"/>
-                </Grid>
-                <Grid xs={1} className={classes.InputButton}>
                     <Button variant="contained" color="primary">Send</Button>
                 </Grid>
             </Grid>

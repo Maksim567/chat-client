@@ -9,30 +9,41 @@ const Message = () => {
     return (
         <>
             <Grid container className={classes.root}>
-                <Grid container>
-                    <Grid className={classes.MessageBlock}>
-                        <span className={classes.MessageTitle}>You</span>
-                        <div className={classes.MessageText}>Lorem ipsum dolor sit amet, vis erat denique in, dicunt
+                <Grid container direction="row">
+                    <Grid className={classes.MessageBlock} xs={9}>
+                        <span>You</span>
+                        <div>Lorem ipsum dolor sit amet, vis erat denique in, dicunt
+                            prodesset te vix.orem ipsum dolor sit amet, vis erat denique in, dicunt
+                            prodesset te vix.orem ipsum dolor sit amet, vis erat denique in, dicunt
+                            prodesset te vix.orem ipsum dolor sit amet, vis erat denique in, dicunt
+                            prodesset te vix.orem ipsum dolor sit amet, vis erat denique in, dicunt
                             prodesset te vix.
                         </div>
                     </Grid>
-                    <Grid className={classes.MessageImg}>
+                    <Grid className={classes.MessageImg} xs={2}>
                         <Avatar alt="Remy Sharp" src="../images/avatar.jpeg"/>
-                        <span className={classes.MessageTime}>2:37 am</span>
+                        <span>2:37 am</span>
                     </Grid>
                 </Grid>
-                <Grid container>
-                    <Grid className={classes.MessageBlock}>
-                        <span className={classes.MessageTitle}>Contact</span>
-                        <div className={classes.MessageText}>Lorem ipsum dolor sit amet, vis erat deniqu</div>
-                    </Grid>
-                    <Grid className={classes.MessageImg}>
-                        <Avatar alt="Remy Sharp" src="../images/avatar.jpeg"/>
-                        <span className={classes.MessageTime}>2:37 am</span>
+                <Grid container className={classes.root}>
+                    <Grid container direction="row">
+                        <Grid className={classes.MessageBlock} xs={9}>
+                            <span>You</span>
+                            <div>Lorem ipsum dolor sit amet, vis erat denique in, dicunt
+                                prodesset te vix.orem ipsum dolor sit amet, vis erat denique in, dicunt
+                                prodesset te vix.orem ipsum dolor sit amet, vis erat denique in, dicunt
+                                prodesset te vix.orem ipsum dolor sit amet, vis erat denique in, dicunt
+                                prodesset te vix.orem ipsum dolor sit amet, vis erat denique in, dicunt
+                                prodesset te vix.
+                            </div>
+                        </Grid>
+                        <Grid className={classes.MessageImg} xs={2}>
+                            <Avatar alt="Remy Sharp" src="../images/avatar.jpeg"/>
+                            <span>2:37 am</span>
+                        </Grid>
                     </Grid>
                 </Grid>
             </Grid>
-
         </>
     );
 };
