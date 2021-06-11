@@ -1,6 +1,6 @@
-import { makeStyles } from '@material-ui/core/styles';
+import {makeStyles} from '@material-ui/core/styles';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
     root: {
         padding: '1rem',
         borderTop: '1px solid #dee6ed',
@@ -16,6 +16,6 @@ const useStyles = makeStyles({
     InputButton: {
         marginLeft: '2rem',
     }
-});
+}));
 
-export { useStyles };
+export {useStyles};

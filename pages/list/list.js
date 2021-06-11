@@ -1,4 +1,4 @@
-import ListComponent from "../../src/component/list";
+import ListComponent from "../../src/components/list";
 
 
 function Chat() {

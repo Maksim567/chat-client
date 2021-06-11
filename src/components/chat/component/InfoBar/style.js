@@ -1,9 +1,13 @@
-import { makeStyles } from '@material-ui/core/styles';
+import {makeStyles} from '@material-ui/core/styles';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
     root: {
         borderBottom: '1px solid #dee6ed',
         padding: '1rem',
+        [theme.breakpoints.down('sm')]: {
+         display: 'none',
+
+        },
     },
     ContactBlock: {
         display: "block",
@@ -25,6 +29,6 @@ const useStyles = makeStyles({
         direction: 'row',
     }
 
-});
+}));
 
-export { useStyles };
+export {useStyles};

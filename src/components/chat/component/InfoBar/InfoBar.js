@@ -5,11 +5,13 @@ import PhoneIcon from "@material-ui/icons/Phone";
 import VideocamIcon from "@material-ui/icons/Videocam";
 import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 import {useStyles} from "../InfoBar/style";
+import {useTheme} from "@material-ui/core/styles";
 
 const InfoBar = () => {
 
     const classes = useStyles();
-
+    const theme = useTheme();
+    
     return (
         <>
             <Grid container className={classes.root}>
