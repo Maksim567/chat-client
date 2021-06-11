@@ -15,22 +15,31 @@ const useStyles = makeStyles((theme) => ({
         paddingLeft: '1rem',
     },
     ContactNames: {
-        display: "inline-block",
-        '& span': {
-            display: 'block',
+        textOverflow: 'ellipsis',
+        whiteSpace: 'nowrap',
+        overflow: 'hidden',
             fontSize: '.825rem',
-            [theme.breakpoints.down('sm')]: {
+            [theme.breakpoints.down('sm')]: {},
+    },
+    ContactSmall: {
 
-            },
+        display: "flex",
+        alignItems: 'start',
+
+        '& svg': {
+            fontSize: '.725rem',
+            color: '#71cc90'
         },
         '& small': {
-            display: 'block',
-            fontSize: '.725rem',
-            [theme.breakpoints.down('sm')]: {
-
-            },
-        }
+            fontSize: 'x-small',
+            [theme.breakpoints.down('sm')]: {},
+        },
     },
+    badge: {
+        background: '#4bbf73',
+        color: 'white',
+        borderRadius: '3px'
+    }
 }));
 
 export {useStyles};

@@ -22,13 +22,21 @@ const UsersContainer = () => {
                 <Grid xs={2}>
                     <Avatar alt="Remy Sharp" src="../images/avatar.jpeg"/>
                 </Grid>
-                <Grid xs={9} className={classes.ContactNames}>
-                    <span>Ashley Briggs</span>
-                    <small><LensIcon fontSize="inherit"
-                                     color="primary"/>онлайн</small>
+                <Grid xs={9}>
+                    <span className={classes.ContactNames}>Ashley Briggs</span>
+                    <div className={classes.ContactSmall}>
+                        <LensIcon/>
+                        <small>онлайн</small>
+                    </div>
                 </Grid>
-                <Grid xs={1} className={classes.ContactMessages}>
-                    <Badge badgeContent={3} color="primary">
+                <Grid xs={1}>
+                    <Badge anchorOrigin={{
+                        vertical: 'center',
+                        horizontal: 'center',
+                    }}
+                           classes={{badge: classes.badge}}
+                           badgeContent="4"
+                    >
                     </Badge>
                 </Grid>
             </Grid>
