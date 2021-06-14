@@ -5,8 +5,9 @@ import UsersContainer from "./component/UsersContainer/UsersContainer";
 import InfoBar from "./component/InfoBar/InfoBar";
 import Messages from "./component/Messages/Messages";
 import InputComponent from "./component/InputComponent/InputComponent";
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import {useTheme} from "@material-ui/core/styles";
+import Message from "./component/Message/Message";
 
 const ChatComponent = () => {
 

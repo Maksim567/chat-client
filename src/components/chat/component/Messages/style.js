@@ -4,6 +4,11 @@ const useStyles = makeStyles({
 
     root: {
         margin: '1rem',
+        overflow: 'auto',
+        overflowX: 'hidden',
+        flex: 'auto',
+        height: '500px',
+
     },
     MessageBlock: {
         background: '#eff2f6',
