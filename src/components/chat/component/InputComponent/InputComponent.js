@@ -4,7 +4,7 @@ import Grid from "@material-ui/core/Grid";
 import {useStyles} from "../InputComponent/style";
 import {useTheme} from "@material-ui/core/styles";
 
-const InputComponent = () => {
+const InputComponent = ({message, setMessage, sendMessage}) => {
 
     const classes = useStyles();
     const theme = useTheme();
@@ -17,6 +17,7 @@ const InputComponent = () => {
                 </Grid>
                 <Grid xs={1} xl={1}>
                     <Button variant="contained" color="primary">Send</Button>
+
                 </Grid>
             </Grid>
         </>

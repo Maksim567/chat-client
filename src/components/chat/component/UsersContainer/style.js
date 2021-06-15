@@ -26,10 +26,6 @@ const useStyles = makeStyles((theme) => ({
         display: "flex",
         alignItems: 'start',
 
-        '& svg': {
-            fontSize: '.725rem',
-            color: '#71cc90'
-        },
         '& small': {
             fontSize: 'x-small',
             [theme.breakpoints.down('sm')]: {},

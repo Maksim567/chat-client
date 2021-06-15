@@ -7,7 +7,7 @@ import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 import {useStyles} from "../InfoBar/style";
 import {useTheme} from "@material-ui/core/styles";
 
-const InfoBar = () => {
+const InfoBar = ({users}) => {
 
     const classes = useStyles();
     const theme = useTheme();

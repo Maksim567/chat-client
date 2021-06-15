@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import map from 'lodash/map';
-import {usersRequested} from "../../redux/slices/users";
+import {usersRequested} from "../../redux/slices/rooms";
 
 function Users() {
 

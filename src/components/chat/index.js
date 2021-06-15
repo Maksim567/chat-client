@@ -7,12 +7,23 @@ import Messages from "./component/Messages/Messages";
 import InputComponent from "./component/InputComponent/InputComponent";
 import React, {useEffect, useState} from "react";
 import {useTheme} from "@material-ui/core/styles";
-import Message from "./component/Message/Message";
+import {useDispatch, useSelector} from "react-redux";
+import {roomsRequested} from "../../redux/slices/rooms";
 
 const ChatComponent = () => {
 
     const classes = useStyles();
     const theme = useTheme();
+
+    const dispatch = useDispatch();
+    const rooms = useSelector((state) => state.rooms.collection);
+    const isLoading = useSelector((state) => state.rooms.loading);
+
+
+    useEffect(() => {
+        dispatch(roomsRequested({status: 'admin'}))
+    }, [rooms]);
+
 
     return (
         <>
@@ -20,7 +31,7 @@ const ChatComponent = () => {
                 <h2>Messages</h2>
                   <Grid container className={classes.root}>
                     <Grid xs={12} xl={3} className={classes.LeftMessages}>
-                        <UsersContainer/>
+                        <UsersContainer rooms={rooms}/>
                     </Grid>
                     <Grid container xs={12} xl={9}>
                         <InfoBar/>
