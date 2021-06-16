@@ -1,6 +1,6 @@
 import { combineReducers } from '@reduxjs/toolkit'
-import rooms from './slices/rooms'
+import users from "./slices/users"
 
 export default combineReducers({
-    rooms
+    users
 })

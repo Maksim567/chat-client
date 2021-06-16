@@ -7,13 +7,13 @@ export default function Home() {
         <>
             <Grid>
                 <h1>Присоединяйся</h1>
-<Grid><input placeholder="Имя" type="text"/></Grid>
-                <Grid><input onChange={() => {}} placeholder="Комната" type="text"/></Grid>
+                <Grid><input placeholder="Имя" type="text"/></Grid>
+                <Grid><input placeholder="Комната" type="text"/></Grid>
             </Grid>
             <Grid>
                 <Link
                     href="/chat"
-                      >
+                >
                     <button>Вход</button>
                 </Link>
             </Grid>

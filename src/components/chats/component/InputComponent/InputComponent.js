@@ -3,8 +3,9 @@ import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
 import {useStyles} from "../InputComponent/style";
 import {useTheme} from "@material-ui/core/styles";
+import React from "react";
 
-const InputComponent = ({message, setMessage, sendMessage}) => {
+const InputComponent = ({message, setMessage, setMessages, messages}) => {
 
     const classes = useStyles();
     const theme = useTheme();
@@ -13,11 +14,13 @@ const InputComponent = ({message, setMessage, sendMessage}) => {
         <>
             <Grid container className={classes.root}>
                 <Grid xs={8} xl={10}>
-                    <Input className={classes.InputBlock} placeholder="Type your message"/>
+                    <input placeholder="Type your message" className={classes.InputBlock} value={message}
+                           onChange={e => setMessage(e.target.value)}/>
                 </Grid>
                 <Grid xs={1} xl={1}>
-                    <Button variant="contained" color="primary">Send</Button>
-
+                    <button variant="contained" color="primary"
+                            onClick={() => setMessages([...messages, message])}>Send
+                    </button>
                 </Grid>
             </Grid>
         </>

@@ -1,9 +1,9 @@
 import { all } from "redux-saga/effects";
-import rooms from "../redux/slices/rooms";
+import users from "./users";
 
 function* rootSaga() {
     yield all([
-        rooms()
+        users()
     ])
 }
 

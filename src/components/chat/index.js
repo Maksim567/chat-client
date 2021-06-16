@@ -1,49 +1,28 @@
-import Grid from '@material-ui/core/Grid';
-import {Container} from "@material-ui/core";
-import {useStyles} from './style';
-import UsersContainer from "./component/UsersContainer/UsersContainer";
-import InfoBar from "./component/InfoBar/InfoBar";
-import Messages from "./component/Messages/Messages";
-import InputComponent from "./component/InputComponent/InputComponent";
-import React, {useEffect, useState} from "react";
-import {useTheme} from "@material-ui/core/styles";
+import React, {useEffect, useState} from 'react';
+import Main from "./components/Main/Main";
 import {useDispatch, useSelector} from "react-redux";
-import {roomsRequested} from "../../redux/slices/rooms";
+import {usersRequested} from "../../redux/slices/users";
+
 
 const ChatComponent = () => {
 
-    const classes = useStyles();
-    const theme = useTheme();
+    const [messages, setMessages] = useState([]);
+    const [message, setMessage] = useState('');
 
     const dispatch = useDispatch();
-    const rooms = useSelector((state) => state.rooms.collection);
-    const isLoading = useSelector((state) => state.rooms.loading);
-
+    const users = useSelector((state) => state.users.collection);
+    const isLoading = useSelector((state) => state.users.loading);
 
     useEffect(() => {
-        dispatch(roomsRequested({status: 'admin'}))
-    }, [rooms]);
-
+        dispatch(usersRequested({status: 'admin'}))
+    }, users);
 
     return (
         <>
-            <Container maxWidth="lg">
-                <h2>Messages</h2>
-                  <Grid container className={classes.root}>
-                    <Grid xs={12} xl={3} className={classes.LeftMessages}>
-                        <UsersContainer rooms={rooms}/>
-                    </Grid>
-                    <Grid container xs={12} xl={9}>
-                        <InfoBar/>
-                        <Messages/>
-                        <InputComponent/>
-                    </Grid>
-                </Grid>
-            </Container>
+            <h1>Message</h1>
+            <Main messages={messages} setMessages={setMessages} message={message} setMessage={setMessage}/>
         </>
-
-    )
-        ;
+    );
 };
 
 export default ChatComponent;
