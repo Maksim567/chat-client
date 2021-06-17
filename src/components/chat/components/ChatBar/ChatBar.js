@@ -7,7 +7,6 @@ import PhoneIcon from "@material-ui/icons/Phone";
 import VideocamIcon from "@material-ui/icons/Videocam";
 import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 
-
 function ChatBar(props) {
 
     const classes = useStyles();

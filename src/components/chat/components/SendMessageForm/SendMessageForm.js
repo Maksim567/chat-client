@@ -1,7 +1,8 @@
 import React from 'react';
 import Grid from "@material-ui/core/Grid";
 import {useStyles} from "./style";
-import {Input} from "@material-ui/core";
+import {Input, InputBase} from "@material-ui/core";
+import Button from "@material-ui/core/Button";
 
 
 function SendMessageForm({message, setMessage, setMessages, messages}) {
@@ -11,13 +12,13 @@ function SendMessageForm({message, setMessage, setMessages, messages}) {
     return (
         <Grid container className={classes.SendMessageForm}>
             <Grid xs={8} xl={10}>
-                <Input placeholder="Type your message" value={message}
-                       onChange={e => setMessage(e.target.value)} fullWidth/>
+                <InputBase placeholder="Type your message" value={message}
+                       onChange={e => setMessage(e.target.value)} fullWidth className={classes.SendMessageInput}/>
             </Grid>
             <Grid xs={1} xl={1} >
-                <button variant="contained" color="primary"
+                <Button variant="contained" color="primary"
                         onClick={() => setMessages([...messages, message])}>Send
-                </button>
+                </Button>
             </Grid>
         </Grid>
     );

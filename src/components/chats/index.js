@@ -23,7 +23,6 @@ const ChatComponent = () => {
     const [messages, setMessages] = useState([]);
     const [message, setMessage] = useState('');
 
-
     useEffect(() => {
         dispatch(usersRequested({status: 'admin'}))
     }, [users]);
@@ -31,6 +30,7 @@ const ChatComponent = () => {
     return (
         <>
             <Container maxWidth="lg">
+
                 <h2>Messages</h2>
                   <Grid container className={classes.root}>
                     <Grid xs={12} xl={3} className={classes.LeftMessages}>

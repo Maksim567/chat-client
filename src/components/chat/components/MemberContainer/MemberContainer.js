@@ -5,14 +5,14 @@ import Grid from "@material-ui/core/Grid";
 import {useStyles} from "./style";
 
 
-function MemberContainer(props) {
+function MemberContainer({users}) {
 
     const classes = useStyles();
 
     return (
         <Grid xs={3} className={classes.MemberContainer}>
            <MemberSearch/>
-            <MemberList/>
+            <MemberList users={users}/>
         </Grid>
     );
 }

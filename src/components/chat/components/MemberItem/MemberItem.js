@@ -2,17 +2,28 @@ import React from 'react';
 import Grid from "@material-ui/core/Grid";
 import {Avatar, Badge} from "@material-ui/core";
 import LensIcon from "@material-ui/icons/Lens";
+import {useStyles} from "./style";
 
-function MemberItem(props) {
+
+function MemberItem({user}) {
+
+    const classes = useStyles();
+
     return (
-        <Grid container>
+        <Grid container className={classes.MemberItem}>
+
+            <span className="status online"></span>
+            <span className="status invisible"></span>
+            <span className="status idle"></span>
+            <span className="status offline"></span>
+
             <Grid xs={2}>
-                <Avatar alt="Remy Sharp"/>
+                <Avatar alt="Remy Sharp" src="../images/avatar.jpeg"/>
             </Grid>
             <Grid xs={9}>
-                <span>Maksim</span>
+                <span>{user.name}</span>
                 <div>
-                    <LensIcon/>
+                    <LensIcon fontSize="small" color="primary"/>
                     <small>online</small>
                 </div>
             </Grid>
@@ -21,8 +32,11 @@ function MemberItem(props) {
                     vertical: 'center',
                     horizontal: 'center',
                 }}
+
+                       classes={{badge: classes.badge}}
+                       badgeContent={user.badgeContent}
                        badgeContent={4}
-                       color="primary"
+
                 >
                 </Badge>
             </Grid>

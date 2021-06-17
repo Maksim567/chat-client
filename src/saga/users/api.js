@@ -1,10 +1,35 @@
-// import {axiosClient} from "../api/api";
+import {axiosClient} from "../api/api";
+
+const fetchUser = ({example}) => axiosClient().get('/api/v1/rooms.json')
+
+export {fetchUser}
+
+// const fetchUser = ({example}) => [
 //
-// const fetchUser = ({example}) => axiosClient().get('/api/v1/rooms.json')
-//
+//             {
+//                 name: 'Maksim',
+//                 messages: {
+//                     content: "test",
+//                     date: "12.00"
+//                 }
+//             },
+//             {
+//                 name: 'oleg',
+//                 messages: {
+//                     content: "test1",
+//                     date: "12.00"
+//                 },
+//             },
+//             {
+//                 name: 'oleg',
+//                 messages: {
+//                     content: "test1",
+//                     date: "12.00"
+//                 },
+//             }
+// ]
 //
 // export {fetchUser}
 
-const fetchUser = ({example}) => [{id: 1, name: 'Oleg'}, {id: 2, name: 'Maksim'}]
-
-export {fetchUser}
+// {id: 1, name: 'Maksim'},
+// {id: 2, name: 'Oleg'}

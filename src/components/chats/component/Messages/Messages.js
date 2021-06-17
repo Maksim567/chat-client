@@ -11,7 +11,7 @@ const Messages = ({message, messages, users}) => {
     const classes = useStyles();
 
     return (
-        <ScrollToBottom  className={classes.root}>
+        <ScrollToBottom className={classes.root}>
 
             {messages.map((message, index) => (
                 <>
