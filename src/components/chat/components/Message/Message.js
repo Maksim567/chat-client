@@ -1,21 +1,48 @@
 import React from 'react';
 import Grid from "@material-ui/core/Grid";
 import {Avatar} from "@material-ui/core";
+import {useStyles} from "./style";
 
 
 function Message({message, users}) {
 
+    const classes = useStyles();
+
+    let isSentByCurrentUser = false;
+    const trimmedName = "test";
+
+    let user = "test";
+
+    if (user === trimmedName) {
+        isSentByCurrentUser = true;
+    }
+
     return (
-        <Grid container direction="row">
-            <Grid xs={9}>
+        isSentByCurrentUser
+            ? (
+        <Grid container className={classes.Message}>
+            <Grid className={classes.MessageBlock}>
                 <span>You</span>
                 <div>{message}</div>
             </Grid>
-            <Grid xs={2}>
+            <Grid className={classes.MessageImg}>
                 <Avatar alt="Remy Sharp" src="../images/avatar.jpeg"/>
-                <span>{users.user}</span>
+                <span>12:00</span>
             </Grid>
-        </Grid>
+        </Grid>)
+            : (
+                <Grid container className={classes.MessageView}>
+                    <Grid className={classes.MessageBlock}>
+                        <span>Maksim</span>
+                        <div>{message}</div>
+                    </Grid>
+                    <Grid className={classes.MessageImg}>
+                        <Avatar alt="Remy Sharp" src="../images/avatar.jpeg"/>
+                        <span>12:00</span>
+                    </Grid>
+                </Grid>
+
+            )
     );
 }
 

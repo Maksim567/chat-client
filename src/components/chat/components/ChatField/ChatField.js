@@ -11,7 +11,7 @@ function ChatField({message, setMessage, setMessages, messages, users}) {
 
     return (
         <Grid xs={9}>
-            <ChatBar/>
+            <ChatBar users={users}/>
             <MessagesContainer messages={messages} message={message} setMessages={setMessages} setMessage={setMessage} users={users}/>
             <SendMessageForm messages={messages} message={message} setMessages={setMessages} setMessage={setMessage} users={users}/>
         </Grid>

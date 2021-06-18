@@ -3,7 +3,6 @@ import Main from "./components/Main/Main";
 import {useDispatch, useSelector} from "react-redux";
 import {usersRequested} from "../../redux/slices/users";
 import map from "lodash/map";
-import Message from "../chats/component/Message/Message";
 import {Link} from "@material-ui/core";
 import {useStyles} from "./style";
 

@@ -12,7 +12,7 @@ function MessagesContainer({message, setMessage, setMessages, messages, users}) 
 
             {messages.map((message, index) => (
                 <>
-                    <Message message={message} users={users}/>
+                    <Message key={index} message={message} users={users}/>
                 </>
             ))}
         </ScrollToBottom>

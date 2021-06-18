@@ -7,16 +7,18 @@ import PhoneIcon from "@material-ui/icons/Phone";
 import VideocamIcon from "@material-ui/icons/Videocam";
 import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 
-function ChatBar(props) {
+function ChatBar({users}) {
 
     const classes = useStyles();
+
+    console.log(users)
 
     return (
             <Grid container className={classes.ChatBar}>
                 <Grid container xs={6} xl={9}>
-                    <Avatar alt="Remy Sharp" src="../images/avatar.jpeg"/>
+                    <Avatar alt="Remy Sharp" src={users.picture}/>
                     <div className={classes.ContactBlock}>
-                        <span>Ashley Briggs</span>
+                        <span>{users.name}</span>
                         <small>Typing...</small>
                     </div>
                 </Grid>
