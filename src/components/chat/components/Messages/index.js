@@ -1,22 +1,24 @@
 import React from 'react';
-import Message from "../Message/Message";
+import Message from "../Message";
 import ScrollToBottom from "react-scroll-to-bottom";
 import {useStyles} from "./style";
+import map from "lodash/map";
 
-
-function MessagesContainer({message, setMessage, setMessages, messages, users}) {
+function MessagesComponent({users}) {
 
     const classes = useStyles();
+
+
     return (
         <ScrollToBottom className={classes.MessagesContainer}>
-
-            {messages.map((message, index) => (
+            {map(users, (user, index) => (
                 <>
-                    <Message key={index} message={message} users={users}/>
+                    <Message key={index} user={user}/>
                 </>
-            ))}
+            ))
+            }
         </ScrollToBottom>
     );
 }
 
-export default MessagesContainer;
+export default MessagesComponent;

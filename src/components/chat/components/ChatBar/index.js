@@ -11,14 +11,12 @@ function ChatBar({users}) {
 
     const classes = useStyles();
 
-    console.log(users)
-
     return (
             <Grid container className={classes.ChatBar}>
                 <Grid container xs={6} xl={9}>
-                    <Avatar alt="Remy Sharp" src={users.picture}/>
+                    <Avatar alt="Remy Sharp" src="../images/avatar.jpeg"/>
                     <div className={classes.ContactBlock}>
-                        <span>{users.name}</span>
+                        <span>test</span>
                         <small>Typing...</small>
                     </div>
                 </Grid>

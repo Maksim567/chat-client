@@ -1,5 +1,5 @@
 import {makeStyles} from '@material-ui/core/styles';
-import MemberSearch from "./MemberSearch";
+import Index from "./index";
 
 const useStyles = makeStyles((theme) => ({
     MemberSearch: {

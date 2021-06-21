@@ -1,10 +1,11 @@
-import React from 'react';
-import MemberItem from "../MemberItem/MemberItem";
+import React, {useEffect} from 'react';
 import map from "lodash/map";
 import {useStyles} from "./style";
 import Grid from "@material-ui/core/Grid";
+import User from "../../../../../pages/users/[id]/[user]";
 
-function MemberList({users}) {
+
+function UsersComponent({users}) {
 
     const classes = useStyles();
 
@@ -12,7 +13,7 @@ function MemberList({users}) {
         <Grid className={classes.MemberList}>
             {map(users, (user, index) =>(
                 <>
-                    <MemberItem user={user}/>
+                    <User user={user}/>
                 </>
             ))
             }
@@ -20,4 +21,4 @@ function MemberList({users}) {
     );
 }
 
-export default MemberList;
+export default UsersComponent;

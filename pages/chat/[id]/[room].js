@@ -7,9 +7,8 @@ const Comment = () => {
 
     return (
         <>
-            <Header />
-            <h1>Post1: {id}</h1>
-            <h1>Comment1: {comment}</h1>
+            <h1>Post: {id}</h1>
+            <h1>Comment: {comment}</h1>
         </>
     )
 }

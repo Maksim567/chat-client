@@ -1,25 +1,31 @@
 import React from 'react';
 import Grid from "@material-ui/core/Grid";
-import {Avatar, Badge, Link} from "@material-ui/core";
+import {Avatar, Badge} from "@material-ui/core";
 import LensIcon from "@material-ui/icons/Lens";
 import {useStyles} from "./style";
 import {useRouter} from "next/router";
+import Link from 'next/link';
 
 
-function MemberItem({user}) {
+function UserComponent({user}) {
 
     const classes = useStyles();
 
     const router = useRouter()
-    const { id } = router.query
+    const {id} = router.query
 
     return (
+        <Link
+        href="/chat/[id]"
+        as={`/chat/${user.id}`}
+    >
             <Grid container className={classes.MemberItem}>
+
                 <Grid xs={2}>
                     <Avatar alt="Remy Sharp" src={user.picture}/>
                 </Grid>
                 <Grid xs={9}>
-                    <span>{user.id}</span>
+                    <span>{user.name}</span>
                     <div>
                         <LensIcon fontSize="small" color="primary"/>
                         <small>online</small>
@@ -39,7 +45,8 @@ function MemberItem({user}) {
                     </Badge>
                 </Grid>
             </Grid>
+        </Link>
     );
 }
 
-export default MemberItem;
+export default UserComponent;

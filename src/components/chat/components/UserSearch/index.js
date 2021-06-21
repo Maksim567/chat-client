@@ -1,8 +1,10 @@
-import React from 'react';
+import React, {useState} from 'react';
 import InputBase from "@material-ui/core/InputBase";
 import {useStyles} from "./style";
+import SearchBar from "material-ui-search-bar";
 
-function MemberSearch(props) {
+
+function UserSearch() {
 
     const classes = useStyles();
 
@@ -18,4 +20,4 @@ function MemberSearch(props) {
     );
 }
 
-export default MemberSearch;
+export default UserSearch;

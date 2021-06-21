@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const serverUrl = 'http://84f10ee60bc4.ngrok.io';
+const serverUrl = 'https://3e74bafef58d.ngrok.io/';
 
 const axiosClient = () => {
     const instance = axios.create({

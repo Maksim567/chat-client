@@ -1,11 +1,14 @@
-import Header from "../components/header";
+import React from 'react';
+import Link from 'next/link'
 
+function Index(props) {
 
-const Home = () => (
-    <>
-        <Header />
-        <h1>Hello World!</h1>
-    </>
-)
+    return <div>
+        <Link href="/chat/[id]" as="/chat/rooms">
+            <a>Chat</a>
+        </Link>
+    </div>
+}
 
-export default Home
+export default Index;
+
