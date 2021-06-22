@@ -2,7 +2,6 @@ import {makeStyles} from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
     Main: {
-        maxWidth: '1200px',
         margin: '0 auto',
         background: "white",
         border: '1px solid #dee6ed',

@@ -4,6 +4,7 @@ const useStyles = makeStyles((theme) => ({
     ChatBar: {
         borderBottom: '1px solid #dee6ed',
         padding: '1rem',
+
     },
     ContactBlock: {
         display: "block",

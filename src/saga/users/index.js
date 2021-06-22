@@ -6,7 +6,7 @@ import {fetchUser} from "./api";
 function* usersRequest() {
     try {
         const response = yield call(fetchUser, { example: 'a' });
-        yield put(usersSucceeded({ users: response.data.rooms}));
+        yield put(usersSucceeded({ users: response}));
     } catch (error) {
         yield put(usersFailed({ error }));
     }

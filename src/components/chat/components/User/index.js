@@ -7,46 +7,53 @@ import {useRouter} from "next/router";
 import Link from 'next/link';
 
 
-function UserComponent({user}) {
+function User({user}) {
 
     const classes = useStyles();
 
     const router = useRouter()
-    const {id} = router.query
 
     return (
-        <Link
-        href="/chat/[id]"
-        as={`/chat/${user.id}`}
-    >
-            <Grid container className={classes.MemberItem}>
-
-                <Grid xs={2}>
-                    <Avatar alt="Remy Sharp" src={user.picture}/>
+        <Link href={`/chat/?chat=${user.id}`} as={`/chat/${user.id}`}>
+            <a>
+                <Grid container justify="center">
+                    {[0, 1, 2].map((value) => (
+                        <Grid key={value} item>
+                        1
+                        </Grid>
+                    ))}
                 </Grid>
-                <Grid xs={9}>
-                    <span>{user.name}</span>
-                    <div>
-                        <LensIcon fontSize="small" color="primary"/>
-                        <small>online</small>
-                    </div>
-                </Grid>
-                <Grid xs={1}>
-                    <Badge anchorOrigin={{
-                        vertical: 'center',
-                        horizontal: 'center',
-                    }}
 
-                           classes={{badge: classes.badge}}
-                           badgeContent={user.badgeContent}
-                           badgeContent={4}
+                <Grid container className={classes.MemberItem}>
+                    <Grid xs={2}>
+                        <Avatar alt="Remy Sharp" src={user.picture}/>
+                    </Grid>
+                    <Grid spacing={2} xs={8}>
+                        <span>{user.name}</span>
+                        <Grid xs={12}>
+                            <LensIcon fontSize="small" color="primary"/>
+                            <small>online</small>
+                        </Grid>
+                    </Grid>
+                    <Grid xs={1}>
+                        <Badge anchorOrigin={{
+                            vertical: 'center',
+                            horizontal: 'center',
+                        }}
 
-                    >
-                    </Badge>
+                               classes={{badge: classes.badge}}
+                               badgeContent={user.badgeContent}
+                               badgeContent={4}
+
+                        >
+                        </Badge>
+                    </Grid>
                 </Grid>
-            </Grid>
+
+
+            </a>
         </Link>
     );
 }
 
-export default UserComponent;
+export default User;

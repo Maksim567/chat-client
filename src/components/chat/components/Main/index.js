@@ -4,16 +4,16 @@ import Grid from "@material-ui/core/Grid";
 import UsersContainer from "../UsersContainer";
 import {useStyles} from "./style";
 
-function RoomsComponent({users}) {
+function Main({users}) {
 
     const classes = useStyles();
 
     return (
-        <Grid container className={classes.Main}>
+        <Grid xs={12} md={10} xl={7} container className={classes.Main}>
             <UsersContainer users={users}/>
             <ChatField users={users}/>
         </Grid>
     );
 }
 
-export default RoomsComponent;
+export default Main;

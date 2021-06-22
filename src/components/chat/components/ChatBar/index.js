@@ -2,12 +2,8 @@ import React from 'react';
 import Grid from "@material-ui/core/Grid";
 import {useStyles} from "./style";
 import {Avatar} from "@material-ui/core";
-import Button from "@material-ui/core/Button";
-import PhoneIcon from "@material-ui/icons/Phone";
-import VideocamIcon from "@material-ui/icons/Videocam";
-import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 
-function ChatBar({users}) {
+function ChatBar({users, id}) {
 
     const classes = useStyles();
 
@@ -16,26 +12,12 @@ function ChatBar({users}) {
                 <Grid container xs={6} xl={9}>
                     <Avatar alt="Remy Sharp" src="../images/avatar.jpeg"/>
                     <div className={classes.ContactBlock}>
-                        <span>test</span>
+                        <span>name</span>
                         <small>Typing...</small>
                     </div>
                 </Grid>
-                <Grid container spacing={1} xs={6} xl={3} className={classes.ContactButton}>
-                    <Grid item xs={4}>
-                        <Button variant="contained" color="primary">
-                            <PhoneIcon/>
-                        </Button>
-                    </Grid>
-                    <Grid item xs={4}>
-                        <Button variant="contained" color="secondary">
-                            <VideocamIcon/>
-                        </Button>
-                    </Grid>
-                    <Grid item xs={4}>
-                        <Button variant="contained">
-                            <MoreHorizIcon/>
-                        </Button>
-                    </Grid>
+                <Grid container className={classes.ContactButton}>
+
                 </Grid>
             </Grid>
     );

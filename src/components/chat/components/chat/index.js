@@ -1,8 +1,10 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from "react-redux";
-import {usersRequested} from "../../redux/slices/users";
+import {usersRequested} from "../../../../redux/slices/users";
 import {useStyles} from "./style";
-import Rooms from "./components/Rooms";
+import Main from "../Main";
+import Grid from "@material-ui/core/Grid";
+
 
 const ChatComponent = () => {
 
@@ -12,18 +14,19 @@ const ChatComponent = () => {
     const users = useSelector((state) => state.users.collection);
     const isLoading = useSelector((state) => state.users.loading);
 
-
     useEffect(() => {
         dispatch(usersRequested({status: 'admin'}))
     }, [dispatch]);
 
-
     return (
         <>
             <h1 className={classes.MainTitle}>Message</h1>
-            <Rooms users={users}/>
+            <Grid container>
+                <Main users={users}/>
+            </Grid>
         </>
-    );
+    )
+        ;
 }
 
 export default ChatComponent;

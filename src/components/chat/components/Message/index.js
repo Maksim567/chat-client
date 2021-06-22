@@ -5,20 +5,16 @@ import {useStyles} from "./style";
 import {useRouter} from "next/router";
 
 
-function MessageComponent({user}) {
+function Message({users:{user, id}, message}) {
 
     const classes = useStyles();
 
-    const router = useRouter()
-    const { id } = router.query
-
     let isSentByCurrentUser = false;
-    const trimmedName = "test";
+    const trimmedName = "0";
 
-    let users = "test";
-
-    if (users === trimmedName) {
+    if (user === trimmedName) {
         isSentByCurrentUser = true;
+
     }
 
     return (
@@ -27,7 +23,7 @@ function MessageComponent({user}) {
         <Grid container className={classes.Message}>
             <Grid className={classes.MessageBlock}>
                 <span>You</span>
-                <div>{user.description}</div>
+                <div>{message}</div>
             </Grid>
             <Grid className={classes.MessageImg}>
                 <Avatar alt="Remy Sharp" src="../images/avatar.jpeg"/>
@@ -38,7 +34,7 @@ function MessageComponent({user}) {
                 <Grid container className={classes.MessageView}>
                     <Grid className={classes.MessageBlock}>
                         <span>Maksim</span>
-                        <div>{user.name}</div>
+                        <div>{message}</div>
                     </Grid>
                     <Grid className={classes.MessageImg}>
                         <Avatar alt="Remy Sharp" src="../images/avatar.jpeg"/>
@@ -50,4 +46,4 @@ function MessageComponent({user}) {
     );
 }
 
-export default MessageComponent;
+export default Message;

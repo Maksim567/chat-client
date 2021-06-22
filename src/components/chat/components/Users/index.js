@@ -1,24 +1,19 @@
-import React, {useEffect} from 'react';
-import map from "lodash/map";
+import React, {useEffect, useState} from 'react';
 import {useStyles} from "./style";
 import Grid from "@material-ui/core/Grid";
-import User from "../../../../../pages/users/[id]/[user]";
+import User from "../User";
 
-
-function UsersComponent({users}) {
+function Users({users, filteredUsers}) {
 
     const classes = useStyles();
 
     return (
         <Grid className={classes.MemberList}>
-            {map(users, (user, index) =>(
-                <>
+            {filteredUsers.map((user) => (
                     <User user={user}/>
-                </>
-            ))
-            }
+            ))}
         </Grid>
     );
 }
 
-export default UsersComponent;
+export default Users;

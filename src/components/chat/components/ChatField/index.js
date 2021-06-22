@@ -3,17 +3,19 @@ import SendMessageForm from "../SendMessageForm/SendMessageForm";
 import ChatBar from "../ChatBar";
 import Grid from "@material-ui/core/Grid";
 import {useStyles} from "./style";
-import MessagesContainer from "../Messages";
+import Messages from "../Messages";
+import {useRouter} from "next/router";
 
 function ChatField({users}) {
 
     const classes = useStyles();
+    const router = useRouter();
 
     return (
-        <Grid xs={9}>
-            <ChatBar users={users}/>
-            <MessagesContainer users={users}/>
-            <SendMessageForm users={users}/>
+        <Grid xs={9} id={router.query.id}>
+                <ChatBar users={users} id={router.query.id}/>
+                <Messages users={users}/>
+                <SendMessageForm users={users}/>
         </Grid>
     );
 }
