@@ -16,7 +16,7 @@ function UsersContainer({users}) {
     useEffect(() => {
         setFilteredUsers(
             users.filter((user) =>
-                user.name.toLowerCase().includes(search.toLowerCase())
+                user.title.toLowerCase().includes(search.toLowerCase())
             )
         );
     }, [search, users]);

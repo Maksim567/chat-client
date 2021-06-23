@@ -1,8 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import ScrollToBottom from "react-scroll-to-bottom";
 import {useStyles} from "./style";
+import Message from "../Message";
 
-function Messages({users, id}) {
+function Messages({users}) {
 
     const classes = useStyles();
 
@@ -10,7 +11,11 @@ function Messages({users, id}) {
         <ScrollToBottom className={classes.MessagesContainer}>
 
             <>
-
+                {/*{messages.map((message, i) => (*/}
+                {/*    <div key={i}>*/}
+                {/*        <Message message={message} name={name}/>*/}
+                {/*    </div>*/}
+                {/*))}*/}
             </>
 
         </ScrollToBottom>

@@ -5,21 +5,23 @@ import {Input, InputBase} from "@material-ui/core";
 import Button from "@material-ui/core/Button";
 
 
-function SendMessageForm({message, setMessage, setMessages, messages}) {
+function SendMessageForm() {
 
     const classes = useStyles();
 
     return (
         <Grid container className={classes.SendMessageForm}>
-            <Grid xs={8} xl={10}>
-                <InputBase placeholder="Type your message" value={message}
-                       onChange={e => setMessage(e.target.value)} fullWidth className={classes.SendMessageInput}/>
-            </Grid>
-            <Grid xs={1} xl={1} >
-                <Button variant="contained" color="primary"
-                        onClick={() => setMessages([...messages, message])}>Send
-                </Button>
-            </Grid>
+
+            {/*<form className="form">*/}
+            {/*    <input*/}
+            {/*        className="input"*/}
+            {/*        type="text"*/}
+            {/*        placeholder="Введите сообщение..."*/}
+            {/*        value={message}*/}
+            {/*        onChange={e => setMessage(e.target.value)}*/}
+            {/*    />*/}
+            {/*    <button className="sendButton" onClick={() => setMessages([...messages, message])}>Отправить</button>*/}
+            {/*</form>*/}
         </Grid>
     );
 }

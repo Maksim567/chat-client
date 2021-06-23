@@ -3,7 +3,7 @@ import Grid from "@material-ui/core/Grid";
 import {useStyles} from "./style";
 import {Avatar} from "@material-ui/core";
 
-function ChatBar({users, id}) {
+function ChatBar({users}) {
 
     const classes = useStyles();
 

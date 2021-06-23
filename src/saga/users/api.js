@@ -5,9 +5,9 @@
 // export {fetchUser}
 
 const fetchUser = ({example}) => [
-    {id: 1, name: 'Maksim'}, {id: 2, name: 'Oleg'}, {
+    {id: 1, title: 'Maksim'}, {id: 2, title: 'Oleg'}, {
         id: 3,
-        name: 'test'
+        title: 'test'
     },
 ]
 

@@ -8,24 +8,24 @@ const initialState = {
 };
 
 const slice = createSlice({
-    name: "rooms",
+    name: "messages",
     initialState,
     reducers: {
         reset: () => initialState,
-        roomsRequested: (state, action) => {
+        messagesRequested: (state, action) => {
             state.loading = true
         },
-        roomsSucceeded: (state, action) => {
+        messagesSucceeded: (state, action) => {
             state.loading = false
-            state.collection = action.payload.rooms
+            state.collection = action.payload.messages
         },
-        roomsFailed: (state, action) => {
+        messagesFailed: (state, action) => {
             state.loading = false
             state.error = action.payload.error
         },
     },
 });
 
-export const { reset, roomsRequested, roomsSucceeded, roomsFailed } = slice.actions;
+export const { reset, messagesRequested, messagesSucceeded, messagesFailed } = slice.actions;
 
 export default slice.reducer;

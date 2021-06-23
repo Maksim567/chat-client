@@ -5,16 +5,17 @@ import {useStyles} from "./style";
 import {useRouter} from "next/router";
 
 
-function Message({users:{user, id}, message}) {
+function Message({name, user, message}) {
 
     const classes = useStyles();
 
     let isSentByCurrentUser = false;
-    const trimmedName = "0";
+    const trimmedName = name;
+
+    console.log(name);
 
     if (user === trimmedName) {
         isSentByCurrentUser = true;
-
     }
 
     return (
