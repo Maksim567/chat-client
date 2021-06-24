@@ -1,40 +1,41 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from "react-redux";
-import {usersRequested} from "../../../../redux/slices/users";
+import users, {roomsRequested} from "../../../../redux/slices/rooms";
 import {useStyles} from "./style";
 import Grid from "@material-ui/core/Grid";
 import {map} from "lodash";
 import {messagesRequested} from "../../../../redux/slices/messages";
+import Main from "../Main";
+
 
 const ChatComponent = () => {
 
     const classes = useStyles();
 
-    let id = 3;
-
     const dispatch = useDispatch();
-    const users = useSelector((state) => state.users.collection);
+    const rooms = useSelector((state) => state.rooms.collection);
     const messages = useSelector((state) => state.messages.collection);
-    const isLoading = useSelector((state) => state.users.loading);
+    const isLoading = useSelector((state) => state.rooms.loading);
 
     useEffect(() => {
-        dispatch(usersRequested({status: 'admin'}))
+        dispatch(roomsRequested())
+        dispatch(messagesRequested())
     }, [dispatch]);
-
-    const message = () => dispatch(messagesRequested({status: 'admin'}));
 
     return (
         <>
-            <h1 className={classes.MainTitle}>Message</h1>
             <Grid container>
-                <Grid xs={4}>
-                    <h4>Users:</h4>{map(users, (user, index) => <p key={index}><a style={{color: "red"}}
-                                                                                  onClick={message}>{user.title}</a>
-                </p>)}
-                </Grid>
-                <Grid xs={8}>
-                    <h4>Message:</h4>{map(messages, (message, index) =><p key={index}>3</p>)}
-                </Grid>
+            <Grid xs={2}>
+                {map(rooms, (room, index) => <p key={index}>f</p>)}
+            </Grid>
+            <Grid xs={8}>
+                {map(messages, (message, index) => <p key={index}>dsfs</p>)}
+            </Grid>
+            </Grid>
+
+            <h1 className={classes.root}>Chat</h1>
+            <Grid container>
+                <Main/>
             </Grid>
         </>
     )

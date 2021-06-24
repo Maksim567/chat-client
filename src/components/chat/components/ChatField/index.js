@@ -6,15 +6,15 @@ import {useStyles} from "./style";
 import Messages from "../Messages";
 
 
-function ChatField({users}) {
+function ChatField() {
 
     const classes = useStyles();
 
     return (
         <Grid xs={9}>
-                <ChatBar users={users}/>
-                <Messages users={users}/>
-                <SendMessageForm users={users}/>
+                <ChatBar/>
+                <Messages/>
+                <SendMessageForm/>
         </Grid>
     );
 }

@@ -5,7 +5,7 @@ import Search from 'react-search';
 import Grid from "@material-ui/core/Grid";
 
 
-function UserSearch({setSearch, search}) {
+function UserSearch() {
 
     const classes = useStyles();
 
@@ -16,7 +16,6 @@ function UserSearch({setSearch, search}) {
                 type="text"
                 placeholder="  search…"
                 inputProps={{'aria-label': 'search'}}
-                onChange={(e) => setSearch(e.target.value)}
                 fullWidth
                 className={classes.MemberInput}
             />

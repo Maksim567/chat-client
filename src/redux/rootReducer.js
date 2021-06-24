@@ -1,8 +1,8 @@
 import { combineReducers } from '@reduxjs/toolkit'
-import users from "./slices/users"
+import rooms from "./slices/rooms"
 import messages from "./slices/messages"
 
 export default combineReducers({
-    users,
+    rooms,
     messages
 })

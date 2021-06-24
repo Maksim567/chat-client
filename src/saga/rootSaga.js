@@ -1,10 +1,10 @@
 import { all } from "redux-saga/effects";
-import users from "./users";
+import rooms from "./rooms";
 import messages from "./messages";
 
 function* rootSaga() {
     yield all([
-        users(),
+        rooms(),
         messages()
     ])
 }

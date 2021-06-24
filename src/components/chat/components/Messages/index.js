@@ -2,8 +2,10 @@ import React, {useEffect, useState} from 'react';
 import ScrollToBottom from "react-scroll-to-bottom";
 import {useStyles} from "./style";
 import Message from "../Message";
+import {map} from "lodash";
+import messages from "../../../../redux/slices/messages";
 
-function Messages({users}) {
+function Messages() {
 
     const classes = useStyles();
 
@@ -11,11 +13,7 @@ function Messages({users}) {
         <ScrollToBottom className={classes.MessagesContainer}>
 
             <>
-                {/*{messages.map((message, i) => (*/}
-                {/*    <div key={i}>*/}
-                {/*        <Message message={message} name={name}/>*/}
-                {/*    </div>*/}
-                {/*))}*/}
+                {map(messages, (message, index) => <Message key={index} message={message}/>)}
             </>
 
         </ScrollToBottom>

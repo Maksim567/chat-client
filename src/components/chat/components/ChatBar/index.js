@@ -11,10 +11,10 @@ function ChatBar({users}) {
             <Grid container className={classes.ChatBar}>
                 <Grid container xs={6} xl={9}>
                     <Avatar alt="Remy Sharp" src="../images/avatar.jpeg"/>
-                    <div className={classes.ContactBlock}>
+                    <Grid className={classes.ContactBlock}>
                         <span>name</span>
                         <small>Typing...</small>
-                    </div>
+                    </Grid>
                 </Grid>
                 <Grid container className={classes.ContactButton}>
 

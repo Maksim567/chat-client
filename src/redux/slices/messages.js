@@ -1,4 +1,21 @@
-import { createSlice } from "@reduxjs/toolkit";
+import {createSlice} from "@reduxjs/toolkit";
+
+
+const LastMessage = (state = initialState, action) => {
+
+    switch (action.type) {
+        case "messages/messagesSucceeded":
+            return state.collection.push({
+                messageId: "1",
+                userId: "1",
+                senderName:"Maksim0",
+                messageText:"test",
+                createAt:"12:00",
+            })
+        default:
+            return state
+    }
+}
 
 const initialState = {
     collection: [],
@@ -6,6 +23,7 @@ const initialState = {
     loading: false,
     error: null,
 };
+
 
 const slice = createSlice({
     name: "messages",
@@ -16,8 +34,8 @@ const slice = createSlice({
             state.loading = true
         },
         messagesSucceeded: (state, action) => {
-            state.loading = false
             state.collection = action.payload.messages
+            state.loading = false
         },
         messagesFailed: (state, action) => {
             state.loading = false
@@ -26,6 +44,10 @@ const slice = createSlice({
     },
 });
 
-export const { reset, messagesRequested, messagesSucceeded, messagesFailed } = slice.actions;
+export const {reset, messagesRequested, messagesSucceeded, messagesFailed} = slice.actions;
 
 export default slice.reducer;
+
+
+
+

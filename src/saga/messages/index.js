@@ -6,7 +6,6 @@ import {fetchMessages} from "./api";
 function* messagesRequest() {
     try {
         const response = yield call(fetchMessages, { example: 'a' });
-        console.log(response)
         yield put(messagesSucceeded({ messages: response}));
     } catch (error) {
         yield put(messagesFailed({ error }));

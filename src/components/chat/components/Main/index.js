@@ -4,14 +4,14 @@ import Grid from "@material-ui/core/Grid";
 import UsersContainer from "../UsersContainer";
 import {useStyles} from "./style";
 
-function Main({users}) {
+function Main() {
 
     const classes = useStyles();
 
     return (
         <Grid xs={12} md={10} xl={7} container className={classes.Main}>
-            <UsersContainer users={users}/>
-            <ChatField users={users}/>
+            <UsersContainer/>
+            <ChatField/>
         </Grid>
     );
 }

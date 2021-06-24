@@ -9,6 +9,22 @@ const useStyles = makeStyles((theme) => ({
     MemberItem: {
         margin: '0.4rem 0'
     },
+    Member: {
+        [theme.breakpoints.down('sm')]: {
+            display: 'none'
+        },
+    },
+    MemberStatus: {
+        background: '#71cc90',
+        borderRadius: '50%',
+        height: '0.5em',
+        width: '0.5em'
+    },
+    MemberBadge: {
+        [theme.breakpoints.down('sm')]: {
+            display: 'none'
+        },
+    }
 }));
 
 export {useStyles};

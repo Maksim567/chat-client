@@ -12,6 +12,8 @@ function SendMessageForm() {
     return (
         <Grid container className={classes.SendMessageForm}>
 
+
+
             {/*<form className="form">*/}
             {/*    <input*/}
             {/*        className="input"*/}

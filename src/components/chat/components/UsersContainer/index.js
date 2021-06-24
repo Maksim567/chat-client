@@ -6,26 +6,15 @@ import {useStyles} from "./style";
 import ScrollToBottom from "react-scroll-to-bottom";
 
 
-function UsersContainer({users}) {
+function UsersContainer() {
 
     const classes = useStyles();
 
-    const [search, setSearch] = useState("");
-    const [filteredUsers, setFilteredUsers] = useState([]);
-
-    useEffect(() => {
-        setFilteredUsers(
-            users.filter((user) =>
-                user.title.toLowerCase().includes(search.toLowerCase())
-            )
-        );
-    }, [search, users]);
-
     return (
         <Grid xs={3} className={classes.MemberContainer}>
-            <UserSearch search={search} setSearch={setSearch}/>
+            <UserSearch />
             <ScrollToBottom className={classes.MemberScroll}>
-                <Users filteredUsers={filteredUsers} users={users}/>
+                <Users/>
             </ScrollToBottom>
         </Grid>
     );
