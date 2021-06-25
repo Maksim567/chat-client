@@ -5,7 +5,7 @@ import messages from "./messages";
 function* rootSaga() {
     yield all([
         rooms(),
-        messages()
+        messages(),
     ])
 }
 

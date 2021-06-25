@@ -1,29 +1,24 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Grid from "@material-ui/core/Grid";
 import {useStyles} from "./style";
-import {Input, InputBase} from "@material-ui/core";
-import Button from "@material-ui/core/Button";
+import {useDispatch} from "react-redux";
+import {messagesPush} from "../../../../redux/slices/messages";
 
 
 function SendMessageForm() {
 
     const classes = useStyles();
+    const dispatch = useDispatch();
+    const [text, setText] = useState('');
 
     return (
         <Grid container className={classes.SendMessageForm}>
-
-
-
-            {/*<form className="form">*/}
-            {/*    <input*/}
-            {/*        className="input"*/}
-            {/*        type="text"*/}
-            {/*        placeholder="Введите сообщение..."*/}
-            {/*        value={message}*/}
-            {/*        onChange={e => setMessage(e.target.value)}*/}
-            {/*    />*/}
-            {/*    <button className="sendButton" onClick={() => setMessages([...messages, message])}>Отправить</button>*/}
-            {/*</form>*/}
+             <input type="text" value={text} onChange={e => setText(e.target.value)}/>
+            <button
+                aria-label="Increment value"
+                 onClick={() => dispatch(messagesPush({message: {room: "2", name: "00", text: text}}))}
+             >send
+             </button>
         </Grid>
     );
 }
