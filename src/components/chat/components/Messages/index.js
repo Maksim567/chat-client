@@ -3,11 +3,12 @@ import ScrollToBottom from "react-scroll-to-bottom";
 import {useStyles} from "./style";
 import Message from "../Message";
 import {map} from "lodash";
-import messages from "../../../../redux/slices/messages";
+import {useSelector} from "react-redux";
 
 function Messages() {
 
     const classes = useStyles();
+    const messages = useSelector((state) => state.messages.collection);
 
     return (
         <ScrollToBottom className={classes.MessagesContainer}>

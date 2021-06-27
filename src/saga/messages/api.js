@@ -1,4 +1,9 @@
-const fetchMessages = ({example}) => ([{id: 1, name: 'Oleg'}, {id: 2, name: 'Maksim'}], [{id: 3, name: 'test'}, {id: 4, name: 'test'}])
+import {find} from "lodash";
+import {MessagesUser2} from "./2/api";
+import {MessagesUser1} from "./1/api";
+import {MessagesUser3} from "./3/api";
+
+const fetchMessages = (example) => ([find([MessagesUser1, MessagesUser2, MessagesUser3], example)])
 
 
 export {fetchMessages}

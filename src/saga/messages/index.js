@@ -3,9 +3,9 @@ import {messagesFailed, messagesRequested, messagesSucceeded} from "../../redux/
 import {fetchMessages} from "./api";
 
 
-function* messagesRequest() {
+function* messagesRequest(state) {
     try {
-        const response = yield call(fetchMessages, { example: 'a' });
+        const response = yield call(fetchMessages, state.payload);
         yield put(messagesSucceeded({ messages: response}));
     } catch (error) {
         yield put(messagesFailed({ error }));

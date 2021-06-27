@@ -6,7 +6,6 @@ import {fetchRooms} from "./api";
 function* roomsRequest() {
     try {
         const response = yield call(fetchRooms);
-        console.log(response)
         yield put(roomsSucceeded({ rooms: response}));
     } catch (error) {
         yield put(roomsFailed({ error }));
