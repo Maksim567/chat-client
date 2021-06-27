@@ -6,28 +6,19 @@ import {useStyles} from "./style";
 import {makeStyles} from "@material-ui/core/styles";
 
 
-function User({user}) {
+function User({room}) {
 
     const classes = useStyles();
     const theme = makeStyles;
 
-    let status;
-
-    if (user.is_status === true) {
-        status = "online";
-
-    } else {
-        status= "offline";
-    }
-
     return (
         <Grid spacing={3} container className={classes.MemberItem}>
             <Grid xs={2}>
-                <Avatar alt="Remy Sharp" src={user.src}/>
+                <Avatar alt="Remy Sharp" src={room.src}/>
             </Grid>
             <Grid xs={8} className={classes.Member}>
                 <Grid xs={2}>
-                    <span>{user.title}</span>
+                    <span>{room.title}</span>
                 </Grid>
                 <Grid xs={10}>
                     <div className={classes.MemberStatus}></div>
@@ -39,10 +30,8 @@ function User({user}) {
                     vertical: 'center',
                     horizontal: 'center',
                 }}
-
                        classes={{badge: classes.badge}}
                        badgeContent={4}
-
                 >
                 </Badge>
             </Grid>

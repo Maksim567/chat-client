@@ -15,22 +15,21 @@ function SendMessageForm() {
     const MessageSend = (id) => dispatch(messagesPush(id))
 
     return (
-        <Grid container className={classes.SendMessageForm}>
+        <Grid container spacing={1} className={classes.SendMessageForm}>
+            <Grid xs={8} xl={10}>
+                <InputBase placeholder="Type your message" fullWidth className={classes.SendMessageInput}/>
+            </Grid>
+            <Grid xs={1} xl={1}>
+                <Button variant="contained" color="primary"
+                    onClick={() => (MessageSend({
+                        id: '4',
+                        name: "testff",
+                        messageText: 'test3',
+                        createAt: '12:00'
+                    }))}>Send
+                </Button>
+            </Grid>
 
-            <button
-                onClick={() => (MessageSend({id: '4', name: "testff", messageText: 'test3', createAt: '12:00'}))}>load
-                users
-            </button>
-            {/*<form className="form">*/}
-            {/*    <input*/}
-            {/*        className="input"*/}
-            {/*        type="text"*/}
-            {/*        placeholder="Введите сообщение..."*/}
-            {/*        value={message}*/}
-            {/*        onChange={e => setMessage(e.target.value)}*/}
-            {/*    />*/}
-            {/*    <button className="sendButton" onClick={() => setMessages([...messages, message])}>Отправить</button>*/}
-            {/*</form>*/}
         </Grid>
     );
 }
