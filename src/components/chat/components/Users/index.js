@@ -5,31 +5,29 @@ import {filter, find, map} from "lodash";
 import {useDispatch, useSelector} from "react-redux";
 import {messagesRequested} from "../../../../redux/slices/messages";
 import User from "../User";
+import {roomLoad} from "../../../../redux/slices/rooms";
 
 function Users() {
 
     const classes = useStyles();
-    const rooms = useSelector((state) => state.rooms.collection);
 
     const dispatch = useDispatch();
-    const loadMessage = (id) => dispatch(messagesRequested(id))
-//    const loadUser = () => dispatch(messagesRequested())
-//    loadUser(),
+    const rooms = useSelector((state) => state.rooms.choiseCollection);
 
-    console.log(map(rooms, "id"))
+    const loadMessage = (id) => dispatch(messagesRequested(id))
+    const loadUser = (id) => dispatch(roomLoad(id))
 
     return (
         <Grid className={classes.MemberList}>
-            {
-                filter((map(rooms, (room, index) => <p><a onClick={() => {
-            loadMessage({id: room.id})
-            }} key={index}><User room={room}/>
-            </a></p>)
-            ))
-
+            {(map(rooms, (room, index) => <p><a onClick={() => {
+                    loadMessage({id: room.id})
+                    loadUser({id: room.id})
+                }} key={index}><User room={room}/>
+                    </a></p>)
+                    )
+                }
+                </Grid>
+            );
             }
-        </Grid>
-    );
-}
 
 export default Users;

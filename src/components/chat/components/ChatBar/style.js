@@ -6,12 +6,16 @@ const useStyles = makeStyles((theme) => ({
         padding: '1rem',
 
     },
+    ChatBarButton: {
+        '& > *': {
+            margin: theme.spacing(1),
+        },
+    },
     ContactBlock: {
-        display: "block",
         marginLeft: '0.7rem',
         verticalAlign: 'top',
         '& span': {
-            display: 'block',
+
             fontSize: "medium",
             fontFamily: 'sans-serif',
         },

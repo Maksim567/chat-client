@@ -1,36 +1,60 @@
 import React, {useState} from 'react';
 import Grid from "@material-ui/core/Grid";
 import {useStyles} from "./style";
-import {Input, InputBase} from "@material-ui/core";
+import {InputBase} from "@material-ui/core";
 import Button from "@material-ui/core/Button";
 import {useDispatch, useSelector} from "react-redux";
 import {messagesPush} from "../../../../redux/slices/messages";
+
 
 
 function SendMessageForm() {
 
     const classes = useStyles();
 
+    const [Message, setMessage] = useState('');
+    const roomLoad = useSelector((state) => state.rooms.roomLoad);
+
     const dispatch = useDispatch();
-    const MessageSend = (id) => dispatch(messagesPush(id))
+
+    function handleSubmit(e) {
+
+        if (Message == '' || roomLoad.length == 0) {
+            return e.preventDefault();
+        } else {
+            dispatch(messagesPush({
+                id: '1',
+                name: "You",
+                messageText: Message,
+                createAt: "12:15"
+            }))
+
+            setMessage('')
+            e.preventDefault();
+        }
+
+    }
+
+    function handleChange(e) {
+        setMessage(e.target.value)
+    }
 
     return (
-        <Grid container spacing={1} className={classes.SendMessageForm}>
-            <Grid xs={8} xl={10}>
-                <InputBase placeholder="Type your message" fullWidth className={classes.SendMessageInput}/>
+        <form onSubmit={handleSubmit}>
+            <Grid container className={classes.SendMessageForm}>
+                <Grid xs={10}>
+                    <InputBase type="text" placeholder="Type your message" fullWidth
+                               className={classes.SendMessageInput}
+                               value={Message}
+                               onChange={handleChange}
+                    />
+                </Grid>
+                <Grid xs={2}>
+                    <Button type="submit" variant="contained" color="primary">Send
+                    </Button>
+                </Grid>
             </Grid>
-            <Grid xs={1} xl={1}>
-                <Button variant="contained" color="primary"
-                    onClick={() => (MessageSend({
-                        id: '4',
-                        name: "testff",
-                        messageText: 'test3',
-                        createAt: '12:00'
-                    }))}>Send
-                </Button>
-            </Grid>
-
-        </Grid>
+        </form>
     );
 }
 

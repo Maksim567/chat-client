@@ -2,6 +2,7 @@ import {createSlice} from "@reduxjs/toolkit";
 import {concat} from "lodash";
 
 const initialState = {
+    chatroomName: '',
     collection: [],
     loading: false,
     error: null,
@@ -13,7 +14,8 @@ const slice = createSlice({
     initialState,
     reducers: {
         reset: () => initialState,
-        messagesRequested: (state) => {
+        messagesRequested: (state, action) => {
+            state.chatroomName = action.payload
             state.loading = true
         },
         messagesSucceeded: (state, action) => {

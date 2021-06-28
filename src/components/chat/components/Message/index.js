@@ -16,7 +16,7 @@ function Message({message}) {
         </Grid>
         <Grid className={classes.MessageImg}>
             <Avatar alt="Remy Sharp" src="../images/avatar.jpeg"/>
-            <span>12:00</span>
+            <span>{message.createAt}</span>
         </Grid>
     </Grid>
     );
