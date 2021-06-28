@@ -13,7 +13,7 @@ function Messages() {
         <ScrollToBottom className={classes.MessagesContainer}>
 
             <>
-                {map(messages, (message, index) => <p key={index}>{message.room}:{message.text}</p>)}
+                {map(messages, (message, index) => <p key={index}>{messagef.room}:{message.text}</p>)}
             </>
 
         </ScrollToBottom>
