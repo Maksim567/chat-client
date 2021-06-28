@@ -1,9 +1,7 @@
-import React, {useState} from 'react';
-import Grid from "@material-ui/core/Grid";
+import React from 'react';
 import {useStyles} from "./style";
-import {Input, InputBase} from "@material-ui/core";
-import Button from "@material-ui/core/Button";
-import {useDispatch, useSelector} from "react-redux";
+import {InputBase, Grid, Button} from "@material-ui/core";
+import {useDispatch} from "react-redux";
 import {messagesPush} from "../../../../redux/slices/messages";
 
 
@@ -23,7 +21,7 @@ function SendMessageForm() {
                 <Button variant="contained" color="primary"
                     onClick={() => (MessageSend({
                         id: '4',
-                        name: "testff",
+                        name: "message",
                         messageText: 'test3',
                         createAt: '12:00'
                     }))}>Send

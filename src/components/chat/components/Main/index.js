@@ -11,7 +11,7 @@ function Main() {
     return (
         <Grid xs={12} md={10} xl={7} container className={classes.Main}>
             <UsersContainer/>
-            <ChatField/>
+             <ChatField/>
         </Grid>
     );
 }

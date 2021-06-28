@@ -4,7 +4,6 @@ import {roomsRequested} from "../../../../redux/slices/rooms";
 import {useStyles} from "./style";
 import Grid from "@material-ui/core/Grid";
 import Main from "../Main";
-import {messagesRequested} from "../../../../redux/slices/messages";
 
 
 const ChatComponent = () => {

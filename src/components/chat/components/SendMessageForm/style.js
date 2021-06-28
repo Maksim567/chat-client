@@ -1,5 +1,4 @@
 import {makeStyles} from '@material-ui/core/styles';
-import SendMessageForm from "./SendMessageForm";
 
 const useStyles = makeStyles((theme) => ({
     SendMessageForm: {

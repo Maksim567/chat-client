@@ -13,8 +13,6 @@ function Users() {
 
     const dispatch = useDispatch();
     const loadMessage = (id) => dispatch(messagesRequested(id))
-//    const loadUser = () => dispatch(messagesRequested())
-//    loadUser(),
 
     console.log(map(rooms, "id"))
 
