@@ -3,7 +3,6 @@ import concat from "lodash/concat";
 
 const initialState = {
     collection: [],
-    meta: {},
     loading: false,
     error: null,
 };
@@ -20,18 +19,19 @@ const slice = createSlice({
             state.collection = action.payload.messages
             state.loading = false
         },
-        messagesPush: (state , action) => {
-            const {message} = action.payload;
-             state.collection = concat(state.collection, message)
-        },
         messagesFailed: (state, action) => {
             state.loading = false
             state.error = action.payload.error
         },
+
+        messagePush: (state , action) => {
+            const {message} = action.payload;
+            state.collection = concat(state.collection, message)
+        },
     },
 });
 
-export const {reset, messagesRequested, messagesSucceeded, messagesPush, messagesFailed} = slice.actions;
+export const {reset, messagesRequested, messagesSucceeded, messagePush, messagesFailed} = slice.actions;
 
 export default slice.reducer;
 

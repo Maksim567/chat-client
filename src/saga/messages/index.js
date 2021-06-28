@@ -6,9 +6,10 @@ import {filter} from "lodash";
 
 function* messagesRequest(state, action) {
     try {
+        console.log(state)
         const response = yield call(fetchMessages, "/1");
         const messages = filter(response, ['room', state.payload]);
-        yield put(messagesSucceeded({ messages: messages}, {id: "1"}));
+        yield put(messagesSucceeded({ messages: messages}));
     } catch (error) {
         yield put(messagesFailed({ error }));
     }

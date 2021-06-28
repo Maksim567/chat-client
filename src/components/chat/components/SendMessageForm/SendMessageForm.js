@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import Grid from "@material-ui/core/Grid";
 import {useStyles} from "./style";
 import {useDispatch} from "react-redux";
-import {messagesPush} from "../../../../redux/slices/messages";
+import {messagePush} from "../../../../redux/slices/messages";
 
 
 function SendMessageForm() {
@@ -16,7 +16,7 @@ function SendMessageForm() {
              <input type="text" value={text} onChange={e => setText(e.target.value)}/>
             <button
                 aria-label="Increment value"
-                 onClick={() => dispatch(messagesPush({message: {room: "2", name: "00", text: text}}))}
+                 onClick={() => dispatch(messagePush({message: {room: "2", name: "00", text: text}}))}
              >send
              </button>
         </Grid>
