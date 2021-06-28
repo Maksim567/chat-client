@@ -1,21 +1,33 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import {useStyles} from "./style";
 import Grid from "@material-ui/core/Grid";
-import {map} from "lodash";
+import {filter, find, map} from "lodash";
 import {useDispatch, useSelector} from "react-redux";
 import {messagesRequested} from "../../../../redux/slices/messages";
-
+import User from "../User";
 
 function Users() {
 
     const classes = useStyles();
-    const dispatch = useDispatch();
     const rooms = useSelector((state) => state.rooms.collection);
+
+    const dispatch = useDispatch();
+    const loadMessage = (id) => dispatch(messagesRequested(id))
+//    const loadUser = () => dispatch(messagesRequested())
+//    loadUser(),
+
+    console.log(map(rooms, "id"))
 
     return (
         <Grid className={classes.MemberList}>
-            {map(rooms, (room, index) => <a key={index} onClick={() => dispatch(messagesRequested(room.id))}>
-                <p>{room.title}</p></a>)}
+            {
+                filter((map(rooms, (room, index) => <p><a onClick={() => {
+            loadMessage({id: room.id})
+            }} key={index}><User room={room}/>
+            </a></p>)
+            ))
+
+            }
         </Grid>
     );
 }

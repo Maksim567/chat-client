@@ -1,5 +1,5 @@
 import {createSlice} from "@reduxjs/toolkit";
-import concat from "lodash/concat";
+import {concat} from "lodash";
 
 const initialState = {
     collection: [],
@@ -7,12 +7,13 @@ const initialState = {
     error: null,
 };
 
+
 const slice = createSlice({
     name: "messages",
     initialState,
     reducers: {
         reset: () => initialState,
-        messagesRequested: (state, action) => {
+        messagesRequested: (state) => {
             state.loading = true
         },
         messagesSucceeded: (state, action) => {
@@ -20,18 +21,18 @@ const slice = createSlice({
             state.loading = false
         },
         messagesFailed: (state, action) => {
-            state.loading = false
             state.error = action.payload.error
+            state.loading = false
         },
+        messagesPush: (state, action) => {
+            state.collection = concat(state.collection, action.payload)
+            state.loading = false
+    }
 
-        messagePush: (state , action) => {
-            const {message} = action.payload;
-            state.collection = concat(state.collection, message)
-        },
     },
 });
 
-export const {reset, messagesRequested, messagesSucceeded, messagePush, messagesFailed} = slice.actions;
+export const {reset, messagesRequested, messagesSucceeded, messagesFailed, messagesPush} = slice.actions;
 
 export default slice.reducer;
 

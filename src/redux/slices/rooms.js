@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import {concat, filter, find} from "lodash";
 
 const initialState = {
     collection: [],
@@ -26,6 +27,12 @@ const slice = createSlice({
     },
 });
 
-export const { reset, roomsRequested, roomsSucceeded, roomsFailed } = slice.actions;
+export const { reset, roomsRequested, roomsSucceeded, roomsFailed} = slice.actions;
 
 export default slice.reducer;
+
+
+// roomLoad: (state, action) => {
+//     filter(state.collection, action.payload)
+//     state.loading = false
+// },

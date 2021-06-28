@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import InputBase from "@material-ui/core/InputBase";
 import {useStyles} from "./style";
-import Search from 'react-search';
 import Grid from "@material-ui/core/Grid";
 
 

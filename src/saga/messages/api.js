@@ -1,10 +1,19 @@
+import {filter} from "lodash";
 
-const fetchMessages = ({example}) => [
-    {room: 1, userId: "1", senderName: 'Maksim', text: 'test,', createAt: '12:00'},
-    {room: 2, userId: "2", senderName: 'Ma', text: 'test, test,', createAt: '12:00'},
-    {room: 3, userId: "3", senderName: 'Masf', text: 'test, test, test', createAt: '12:00'}
+const rooms =
+    [
+        {
+            id: '1', name: "you", messageText: 'test', createAt: '12:00',
+        }, {
+        id: '1', name: "you", messageText: 'test', createAt: '12:00',
+    }, {
+        id: '1', name: "you", messageText: 'test', createAt: '12:00',
+    },
+        {id: '2', name: "maksim", messageText: 'test1', createAt: '12:00',},
+        {id: '3', name: "test", messageText: 'test2', createAt: '12:00'}
+    ]
 
-]
+const fetchMessages = (example) => (filter(rooms, example))
+
 
 export {fetchMessages}
-

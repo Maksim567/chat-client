@@ -1,15 +1,12 @@
 import { takeLatest, call, put } from "redux-saga/effects";
 import {messagesFailed, messagesRequested, messagesSucceeded} from "../../redux/slices/messages";
 import {fetchMessages} from "./api";
-import {filter} from "lodash";
 
 
-function* messagesRequest(state, action) {
+function* messagesRequest(state) {
     try {
-        console.log(state)
-        const response = yield call(fetchMessages, "/1");
-        const messages = filter(response, ['room', state.payload]);
-        yield put(messagesSucceeded({ messages: messages}));
+        const response = yield call(fetchMessages, state.payload);
+        yield put(messagesSucceeded({ messages: response}));
     } catch (error) {
         yield put(messagesFailed({ error }));
     }
@@ -20,8 +17,3 @@ function* messages() {
 }
 
 export default messages;
-
-
-
-
-// yield put(messageLast({ messages: response}, {id: "0"}));
