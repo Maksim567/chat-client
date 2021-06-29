@@ -1,34 +1,15 @@
 import {makeStyles} from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
-    ChatBar: {
-        borderBottom: '1px solid #dee6ed',
-        padding: '1rem',
-
+    ChatList: {
+        borderBottom: '1px solid #ced4da',
     },
-    ChatBarButton: {
+    root: {
         '& > *': {
             margin: theme.spacing(1),
-        },
-    },
-    ContactBlock: {
-        marginLeft: '0.7rem',
-        verticalAlign: 'top',
-        '& span': {
-
-            fontSize: "medium",
-            fontFamily: 'sans-serif',
-        },
-        '& small': {
-            display: 'block',
-            color: 'red',
-            fontSize: 'small',
-            fontFamily: 'sans-serif',
         }
-    },
-    ContactButton: {
-        direction: 'row',
     }
 }));
 
 export {useStyles};
+

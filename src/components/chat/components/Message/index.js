@@ -8,17 +8,38 @@ function Message({message}) {
 
     const classes = useStyles();
 
+    let isSentByCurrentUser = false;
+
+    if (message.id === '4') {
+        isSentByCurrentUser = true;
+    }
+
     return (
-    <Grid container className={classes.Message}>
-        <Grid className={classes.MessageBlock}>
-            <span>{message.name}</span>
-            <div>{message.messageText}</div>
+        isSentByCurrentUser
+            ? (
+        <Grid container className={classes.Message}>
+            <Grid className={classes.MessageBlock}>
+                <span>You</span>
+                <div>{message.messageText}</div>
+            </Grid>
+            <Grid className={classes.MessageImg}>
+                <Avatar alt="Remy Sharp" src="../images/avatar.jpeg"/>
+                <span>{message.createAt}</span>
+            </Grid>
         </Grid>
-        <Grid className={classes.MessageImg}>
-            <Avatar alt="Remy Sharp" src="../images/avatar.jpeg"/>
-            <span>{message.createAt}</span>
-        </Grid>
-    </Grid>
+            ): (
+                <Grid container className={classes.MessageView}>
+                    <Grid className={classes.MessageBlock}>
+                        <span>{message.name}</span>
+                        <div>{message.messageText}</div>
+                        
+                    </Grid>
+                    <Grid className={classes.MessageImg}>
+                        <Avatar alt="Remy Sharp" src="../images/avatar.jpeg"/>
+                        <span>{message.createAt}</span>
+                    </Grid>
+                </Grid>
+            )
     );
 }
 

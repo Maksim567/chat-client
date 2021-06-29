@@ -1,8 +1,8 @@
 // import {axiosClient} from "../api/api";
 //
-// const fetchUser = ({example}) => axiosClient().get('/api/v1/rooms.json')
+// const fetchRooms = ({example}) => axiosClient().get('/api/v1/rooms.json')
 //
-// export {fetchUser}
+// export {fetchRooms}
 
 const fetchRooms = () => [
     {id: '1', title: 'Maksim', src: '../images/avatar.jpeg', is_status: true, badgeContent: '2'}, {

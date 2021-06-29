@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import UserSearch from "../UserSearch";
 import Users from "../Users";
 import Grid from "@material-ui/core/Grid";

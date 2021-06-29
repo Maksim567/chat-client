@@ -1,6 +1,6 @@
 import {makeStyles} from '@material-ui/core/styles';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
     Main: {
         margin: '0 auto',
         background: "white",

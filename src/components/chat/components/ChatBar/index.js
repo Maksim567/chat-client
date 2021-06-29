@@ -1,66 +1,40 @@
 import React from 'react';
-import Grid from "@material-ui/core/Grid";
 import {useStyles} from "./style";
-import {Avatar} from "@material-ui/core";
+import {Avatar, ListItem, ListItemAvatar, ListItemSecondaryAction, ListItemText} from "@material-ui/core";
 import {map} from "lodash";
 import {useSelector} from "react-redux";
+import List from "@material-ui/core/List";
 import Button from "@material-ui/core/Button";
+import PhoneIcon from '@material-ui/icons/Phone';
+import VideocamIcon from '@material-ui/icons/Videocam';
+import {useTheme} from "@material-ui/core/styles";
 
 function ChatBar() {
 
     const classes = useStyles();
+    const theme = useTheme();
 
     const room = useSelector((state) => state.rooms.roomLoad);
 
-    let CurrentUser = false;
-
-    if (room.length != 0) {
-
-        CurrentUser = true;
-    }
-
     return (
-        CurrentUser
-            ? (
-                <Grid container className={classes.ChatBar}>
-
-                    {map(room, (roomId, index) => <Grid container key={index} xs={6} xl={9}
-                        >
-                            <Grid xs={1}>
-                                <Avatar alt="Remy Sharp" src={roomId.src}/>
-                            </Grid>
-                            <Grid className={classes.ContactBlock}>
-                                <span>{roomId.title}</span>
-                                <small>typing</small>
-                            </Grid>
-                        </Grid>
-                    )
-                    }
-                    <Grid xs={6} xl={3} className={classes.ChatBarButton}>
-
-                        <Button variant="contained" color="primary"></Button>
-                        <Button variant="contained" color="primary">fsd</Button>
-                        <Button variant="contained">ffs</Button>
-
-                    </Grid>
-                </Grid>) : (
-                <Grid container className={classes.ChatBar}>
-                    <Grid xs={1}>
-                        <Avatar alt="Remy Sharp"/>
-                    </Grid>
-                    <Grid xs={6} className={classes.ContactBlock}>
-                        <span></span>
-                        <small>typing</small>
-                    </Grid>
-                    <Grid xs={6} xl={3} className={classes.ChatBarButton}>
-
-                        <Button variant="contained" color="primary">fsd</Button>
-                        <Button variant="contained" color="primary">fsd</Button>
-                        <Button variant="contained">ffs</Button>
-
-                    </Grid>
-                </Grid>
-            )
+        <>
+            {map(room, (roomId, index) =>
+                <List key={index} className={classes.ChatList}>
+                    <ListItem>
+                        <ListItemAvatar>
+                            <Avatar alt="Remy Sharp" src={roomId.src}/>
+                        </ListItemAvatar>
+                        <ListItemText primary={roomId.title}/>
+                        <ListItemSecondaryAction className={classes.root}>
+                            <Button variant="contained" color="primary"><PhoneIcon/></Button>
+                            <Button variant="contained"><VideocamIcon/></Button>
+                            <Button variant="contained" color="secondary">
+                                ...
+                            </Button>
+                        </ListItemSecondaryAction>
+                    </ListItem>
+                </List>)}
+        </>
     );
 }
 

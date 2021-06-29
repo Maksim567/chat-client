@@ -1,63 +1,89 @@
 import React from 'react';
-import Grid from "@material-ui/core/Grid";
-import {Avatar, Badge} from "@material-ui/core";
+import {Avatar, Badge, List, ListItem, ListItemAvatar, ListItemSecondaryAction, ListItemText} from "@material-ui/core";
 import {useStyles} from "./style";
-import {makeStyles} from "@material-ui/core/styles";
-
+import {useDispatch} from "react-redux";
+import {messagesRequested} from "../../../../redux/slices/messages";
+import {roomLoad} from "../../../../redux/slices/rooms";
 
 function User({room}) {
 
     const classes = useStyles();
-    const theme = makeStyles;
+
+    const dispatch = useDispatch();
+
+    const loadMessage = (id) => dispatch(messagesRequested(id))
+    const loadUser = (id) => dispatch(roomLoad(id))
 
     function status() {
-        if (room.is_status == true) {
-            return (
-                <Grid xs={10} container
-                      direction="row"
-                      justify="flex-start"
-                      alignItems="flex-start"
-                >
-                    <Grid className={classes.MemberStatusOnline}></Grid>
-                    <Grid>online</Grid>
-                </Grid>
-
+        if (room.is_status === true) {
+            return (<>
+                    <div className={classes.MemberStatusOnline}></div>
+                    <small>online</small>
+                </>
             )
         } else {
-            return (<Grid xs={10} container
-                          direction="row"
-                          justify="flex-start"
-                          alignItems="flex-start"
-            >
-                <Grid className={classes.MemberStatusOffline}></Grid>
-                <Grid>offline</Grid>
-            </Grid>)
+            return (<>
+            <div className={classes.MemberStatusOffline}></div>
+            <small>offline</small>
+        </>)
         }
     }
 
+    function ListItemLink(props) {
+        return <ListItem button component="a" {...props} />;
+    }
+
     return (
-        <Grid spacing={3} container className={classes.MemberItem}>
-            <Grid xs={2}>
-                <Avatar alt="Remy Sharp" src={room.src}/>
-            </Grid>
-            <Grid xs={8} className={classes.Member}>
-                <Grid xs={2}>
-                    <Grid>{room.title}</Grid>
-                </Grid>
-                {status()}
-            </Grid>
-            <Grid xs={1} className={classes.MemberBadge}>
-                <Badge anchorOrigin={{
-                    vertical: 'center',
-                    horizontal: 'center',
-                }}
-                       classes={{badge: classes.badge}}
-                       badgeContent={room.badgeContent}
-                >
-                </Badge>
-            </Grid>
-        </Grid>
+
+            <ListItemLink onClick={() => {
+                loadMessage({id: room.id})
+                loadUser({id: room.id})
+            }}>
+                <ListItemAvatar>
+                    <Avatar alt="Remy Sharp" src={room.src}/>
+                </ListItemAvatar>
+                <ListItemText primary={room.title} classes={{secondary: classes.secondary}} secondary={status()}/>
+                <ListItemSecondaryAction>
+                    <Badge
+                        classes={{badge: classes.badge}}
+                        badgeContent={room.badgeContent}
+                    >
+                    </Badge>
+                </ListItemSecondaryAction>
+            </ListItemLink>
+
     );
 }
 
 export default User;
+
+
+// <Grid xs={2}>
+//
+// </Grid>
+// <Grid xs={8} className={classes.Member}>
+//     <Grid xs={2}>
+//         <Grid>{room.title}</Grid>
+//     </Grid>
+//     {    room.is_status
+//         ? (
+//             <Grid xs={10} container
+//                   direction="row"
+//                   justify="flex-start"
+//                   alignItems="flex-start"
+//             >
+//                 <Grid className={classes.MemberStatusOnline}></Grid>
+//                 <Grid>online</Grid>
+//             </Grid>
+//         ): (
+//             <Grid xs={10} container
+//                   direction="row"
+//                   justify="flex-start"
+//                   alignItems="flex-start"
+//             >
+//                 <Grid className={classes.MemberStatusOffline}></Grid>
+//                 <Grid>offline</Grid>
+//             </Grid>
+//         )
+//     }
+// </Grid>

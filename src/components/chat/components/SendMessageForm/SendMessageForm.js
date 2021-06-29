@@ -6,8 +6,6 @@ import Button from "@material-ui/core/Button";
 import {useDispatch, useSelector} from "react-redux";
 import {messagesPush} from "../../../../redux/slices/messages";
 
-
-
 function SendMessageForm() {
 
     const classes = useStyles();
@@ -19,14 +17,13 @@ function SendMessageForm() {
 
     function handleSubmit(e) {
 
-        if (Message == '' || roomLoad.length == 0) {
+        if (Message === '' || roomLoad.length === 0) {
             return e.preventDefault();
         } else {
             dispatch(messagesPush({
-                id: '1',
-                name: "You",
+                id: '4',
                 messageText: Message,
-                createAt: "12:15"
+                createAt: '14:00'
             }))
 
             setMessage('')
@@ -41,15 +38,15 @@ function SendMessageForm() {
 
     return (
         <form onSubmit={handleSubmit}>
-            <Grid container className={classes.SendMessageForm}>
-                <Grid xs={10}>
+            <Grid xs={12} container className={classes.SendMessageForm}>
+                <Grid xs={11}>
                     <InputBase type="text" placeholder="Type your message" fullWidth
                                className={classes.SendMessageInput}
                                value={Message}
                                onChange={handleChange}
                     />
                 </Grid>
-                <Grid xs={2}>
+                <Grid xs={1}>
                     <Button type="submit" variant="contained" color="primary">Send
                     </Button>
                 </Grid>

@@ -1,9 +1,9 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import InputBase from "@material-ui/core/InputBase";
 import {useStyles} from "./style";
-import Grid from "@material-ui/core/Grid";
 import {useDispatch} from "react-redux";
 import {roomsFillter, roomsRequested} from "../../../../redux/slices/rooms";
+import Grid from "@material-ui/core/Grid";
 
 
 function UserSearch() {
@@ -24,16 +24,16 @@ function UserSearch() {
     }
 
     return (
-        <Grid className={classes.MemberSearch}>
-                <InputBase
-                    type="text"
-                    placeholder="  search…"
-                    inputProps={{'aria-label': 'search'}}
-                    fullWidth
-                    value={inputValue}
-                    onChange={handleChange}
-                    className={classes.MemberInput}
-                />
+        <Grid>
+            <InputBase
+                type="text"
+                placeholder="  search…"
+                inputProps={{'aria-label': 'search'}}
+                fullWidth
+                value={inputValue}
+                onChange={handleChange}
+                className={classes.MemberInput}
+            />
         </Grid>
     );
 }

@@ -6,7 +6,6 @@ const axiosClient = () => {
     const instance = axios.create({
         responseType: "JSON",
         baseURL: serverUrl,
-        // headers: headers(),
     });
     return instance;
 }

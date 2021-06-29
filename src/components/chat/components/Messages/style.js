@@ -1,8 +1,8 @@
 import {makeStyles} from '@material-ui/core/styles';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
     MessagesContainer: {
-        height: '500px',
+        minHeight: '500px',
         overflow: 'auto',
         overflowX: 'hidden',
     }

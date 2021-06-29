@@ -1,21 +1,35 @@
 import React from 'react';
 import SendMessageForm from "../SendMessageForm/SendMessageForm";
-import ChatBar from "../ChatBar";
 import Grid from "@material-ui/core/Grid";
-import {useStyles} from "./style";
 import Messages from "../Messages";
+import {useSelector} from "react-redux";
+import ChatBar from "../ChatBar";
 
 
 function ChatField() {
 
-    const classes = useStyles();
+    const room = useSelector((state) => state.rooms.roomLoad);
+
+    let CurrentUser = false;
+
+    if (room.length != 0) {
+
+        CurrentUser = true;
+    }
+
 
     return (
-        <Grid xs={9}>
+        CurrentUser
+            ? (
+        <Grid>
                 <ChatBar/>
                 <Messages/>
                 <SendMessageForm/>
-        </Grid>
+        </Grid>)  : (<Grid></Grid>
+
+            )
+
+
     );
 }
 
